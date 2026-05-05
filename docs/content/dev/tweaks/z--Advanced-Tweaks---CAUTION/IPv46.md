@@ -1,11 +1,11 @@
 ---
-title: "Prefer IPv4 over IPv6"
+title: "IPv6 - Set IPv4 as Preferred"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=2051}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=1149}
   "WPFTweaksIPv46": {
-    "Content": "Prefer IPv4 over IPv6",
+    "Content": "IPv6 - Set IPv4 as Preferred",
     "Description": "Setting the IPv4 preference can have latency and security benefits on private networks where IPv6 is not configured.",
     "category": "z__Advanced Tweaks - CAUTION",
     "panel": "1",
@@ -22,6 +22,6 @@ description: ""
 
 ## Registry Changes
 
-Applications and System Components store and retrieve configuration data to modify windows settings, so we can use the registry to change many settings in one place.
+Applications and System Components store and retrieve configuration data to modify Windows settings, so we can use the registry to change many settings in one place.
 
 You can find information about the registry on [Wikipedia](https://www.wikiwand.com/en/Windows_Registry) and [Microsoft's Website](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry).

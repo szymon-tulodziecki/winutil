@@ -1,11 +1,11 @@
 ---
-title: "Block Razer Software Installs"
+title: "Razer Software Auto-Install - Disable"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=1908}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=1007}
   "WPFTweaksRazerBlock": {
-    "Content": "Block Razer Software Installs",
+    "Content": "Razer Software Auto-Install - Disable",
     "Description": "Blocks ALL Razer Software installations. The hardware works fine without any software.",
     "category": "z__Advanced Tweaks - CAUTION",
     "panel": "1",
@@ -31,8 +31,7 @@ description: ""
 
       if (Test-Path $RazerPath) {
         Remove-Item $RazerPath\\* -Recurse -Force
-      }
-      else {
+      } else {
         New-Item -Path $RazerPath -ItemType Directory
       }
 
@@ -48,6 +47,6 @@ description: ""
 
 ## Registry Changes
 
-Applications and System Components store and retrieve configuration data to modify windows settings, so we can use the registry to change many settings in one place.
+Applications and System Components store and retrieve configuration data to modify Windows settings, so we can use the registry to change many settings in one place.
 
 You can find information about the registry on [Wikipedia](https://www.wikiwand.com/en/Windows_Registry) and [Microsoft's Website](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry).

@@ -58,14 +58,12 @@ function Invoke-WPFButton {
         "WPFSimpleM365Button" {Invoke-WinUtilSimpleM365}
         "WPFM365ODTButton" {Invoke-WinUtilM365Debloat}
         "WPFOOSUbutton" {Invoke-WPFOOSU}
-        "WPFAddUltPerf" {Invoke-WPFUltimatePerformance -State "Enable"}
-        "WPFRemoveUltPerf" {Invoke-WPFUltimatePerformance -State "Disable"}
+        "WPFAddUltPerf" {Invoke-WPFUltimatePerformance -Do}
+        "WPFRemoveUltPerf" {Invoke-WPFUltimatePerformance}
         "WPFundoall" {Invoke-WPFundoall}
         "WPFUpdatesdefault" {Invoke-WPFUpdatesdefault}
-        "WPFRunAdobeCCCleanerTool" {Invoke-WPFRunAdobeCCCleanerTool}
         "WPFUpdatesdisable" {Invoke-WPFUpdatesdisable}
         "WPFUpdatessecurity" {Invoke-WPFUpdatessecurity}
-        "WPFWinUtilShortcut" {Invoke-WPFShortcut -ShortcutToAdd "WinUtil" -RunAsAdmin $true}
         "WPFGetInstalled" {Invoke-WPFGetInstalled -CheckBox "winget"}
         "WPFGetInstalledTweaks" {Invoke-WPFGetInstalled -CheckBox "tweaks"}
         "WPFCloseButton" {$sync.Form.Close(); Write-Host "Bye bye!"}

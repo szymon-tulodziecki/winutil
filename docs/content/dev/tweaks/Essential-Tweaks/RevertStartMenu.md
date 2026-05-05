@@ -1,13 +1,13 @@
 ---
-title: "Revert the new start menu"
+title: "Start Menu Previous Layout - Enable"
 description: ""
 ---
 
 ```json {filename="config/tweaks.json",linenos=inline,linenostart=90}
   "WPFTweaksRevertStartMenu": {
-    "Content": "Revert the new start menu",
-    "Description": "Uses vivetool to revert to the original start menu from 24H2.",
-    "category": "z__Advanced Tweaks - CAUTION",
+    "Content": "Start Menu Previous Layout - Enable",
+    "Description": "Bring back the old Start Menu layout from before the gradual rollout of the new one in 25H2.",
+    "category": "Essential Tweaks",
     "panel": "1",
     "InvokeScript": [
       "
@@ -20,7 +20,7 @@ description: ""
 
       Remove-Item ViVeTool -Recurse
 
-      Write-Host 'Old start menu reverted please restart your computer to take effect'
+      Write-Host 'Old start menu reverted. Please restart your computer to take effect.'
       "
     ],
     "UndoScript": [
@@ -34,7 +34,7 @@ description: ""
 
       Remove-Item ViVeTool -Recurse
 
-      Write-Host 'New start menu reverted please restart your computer to take effect'
+      Write-Host 'New start menu reverted. Please restart your computer to take effect.'
       "
     ],
 ```

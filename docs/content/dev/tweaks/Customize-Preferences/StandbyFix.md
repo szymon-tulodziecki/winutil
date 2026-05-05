@@ -1,12 +1,12 @@
 ---
-title: "Modern Standby fix"
+title: "S0 Sleep Network Connectivity"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=2203}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=1558}
   "WPFToggleStandbyFix": {
-    "Content": "Modern Standby fix",
-    "Description": "Disable network connection during S0 sleep. If network connectivity is turned on during S0 sleep it could cause overheating on modern laptops",
+    "Content": "S0 Sleep Network Connectivity",
+    "Description": "Enable or disable network connectivity during S0 Sleep.",
     "category": "Customize Preferences",
     "panel": "2",
     "Type": "Toggle",
@@ -14,9 +14,9 @@ description: ""
       {
         "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Power\\PowerSettings\\f15576e8-98b7-4186-b944-eafa664402d9",
         "Name": "ACSettingIndex",
-        "Value": "0",
+        "Value": "1",
         "Type": "DWord",
-        "OriginalValue": "<RemoveEntry>",
+        "OriginalValue": "0",
         "DefaultState": "true"
       }
     ],
@@ -24,6 +24,6 @@ description: ""
 
 ## Registry Changes
 
-Applications and System Components store and retrieve configuration data to modify windows settings, so we can use the registry to change many settings in one place.
+Applications and System Components store and retrieve configuration data to modify Windows settings, so we can use the registry to change many settings in one place.
 
 You can find information about the registry on [Wikipedia](https://www.wikiwand.com/en/Windows_Registry) and [Microsoft's Website](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry).

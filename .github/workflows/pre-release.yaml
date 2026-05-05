@@ -11,6 +11,8 @@ on:
 jobs:
   build-runspace:
     runs-on: windows-latest
+    outputs:
+      version: ${{ steps.extract_version.outputs.version }}
     env:
       CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
     steps:
@@ -57,6 +59,7 @@ jobs:
         run: |
           $version = (Get-Date -Format "yy.MM.dd")
           echo "VERSION=$version" >> $env:GITHUB_ENV
+          echo "version=$version" >> $env:GITHUB_OUTPUT
         shell: pwsh
 
       - name: Create Tag
@@ -79,9 +82,27 @@ jobs:
           }
         shell: pwsh
 
+      - name: Upload compiled script
+        uses: actions/upload-artifact@v7
+        with:
+          name: winutil-ps1
+          path: ./winutil.ps1
+
+  release:
+    needs: build-runspace
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download compiled script
+        uses: actions/download-artifact@v8
+        with:
+          name: winutil-ps1
+
+      - name: Set version from build job
+        run: echo "VERSION=${{ needs.build-runspace.outputs.version }}" >> $GITHUB_ENV
+
       - name: Generate Release Notes
         id: generate_notes
-        uses: release-drafter/release-drafter@v6
+        uses: release-drafter/release-drafter@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -90,7 +111,7 @@ jobs:
 
       - name: Create and Upload Release
         id: create_release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.VERSION }}
           name: Pre-Release ${{ env.VERSION }}

@@ -1,11 +1,11 @@
 ---
-title: "Remove Widgets"
+title: "Widgets - Remove"
 description: ""
 ---
 
 ```json {filename="config/tweaks.json",linenos=inline,linenostart=61}
   "WPFTweaksWidget": {
-    "Content": "Remove Widgets",
+    "Content": "Widgets - Remove",
     "Description": "Removes the annoying widgets in the bottom left of the Taskbar.",
     "category": "Essential Tweaks",
     "panel": "1",
@@ -13,7 +13,7 @@ description: ""
       "
       # Sometimes if you dont stop the Widgets process the removal may fail
 
-      Stop-Process -Name Widgets
+      Get-Process *Widget* | Stop-Process
       Get-AppxPackage Microsoft.WidgetsPlatformRuntime -AllUsers | Remove-AppxPackage -AllUsers
       Get-AppxPackage MicrosoftWindows.Client.WebExperience -AllUsers | Remove-AppxPackage -AllUsers
 

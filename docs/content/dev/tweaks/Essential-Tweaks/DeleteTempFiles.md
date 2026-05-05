@@ -1,11 +1,11 @@
 ---
-title: "Delete Temporary Files"
+title: "Temporary Files - Remove"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=2038}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=1136}
   "WPFTweaksDeleteTempFiles": {
-    "Content": "Delete Temporary Files",
+    "Content": "Temporary Files - Remove",
     "Description": "Erases TEMP Folders.",
     "category": "Essential Tweaks",
     "panel": "1",

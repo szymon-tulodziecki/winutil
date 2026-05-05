@@ -1,11 +1,11 @@
 ---
-title: "Disable Telemetry"
+title: "Telemetry - Disable"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=1307}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=505}
   "WPFTweaksTelemetry": {
-    "Content": "Disable Telemetry",
+    "Content": "Telemetry - Disable",
     "Description": "Disables Microsoft Telemetry.",
     "category": "Essential Tweaks",
     "panel": "1",
@@ -106,9 +106,6 @@ description: ""
       # Disable (Windows Error Reporting Manager) Service
       Set-Service -Name wermgr -StartupType Disabled
 
-      $Memory = (Get-CimInstance Win32_PhysicalMemory | Measure-Object Capacity -Sum).Sum / 1KB
-      Set-ItemProperty -Path \"HKLM:\\SYSTEM\\CurrentControlSet\\Control\" -Name SvcHostSplitThresholdInKB -Value $Memory
-
       Remove-ItemProperty -Path \"HKCU:\\Software\\Microsoft\\Siuf\\Rules\" -Name PeriodInNanoSeconds
       "
     ],
@@ -128,6 +125,6 @@ description: ""
 
 ## Registry Changes
 
-Applications and System Components store and retrieve configuration data to modify windows settings, so we can use the registry to change many settings in one place.
+Applications and System Components store and retrieve configuration data to modify Windows settings, so we can use the registry to change many settings in one place.
 
 You can find information about the registry on [Wikipedia](https://www.wikiwand.com/en/Windows_Registry) and [Microsoft's Website](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry).

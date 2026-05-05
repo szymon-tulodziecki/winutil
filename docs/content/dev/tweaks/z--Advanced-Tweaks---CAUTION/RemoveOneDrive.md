@@ -1,11 +1,11 @@
 ---
-title: "Remove OneDrive"
+title: "Microsoft OneDrive - Remove"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=1461}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=656}
   "WPFTweaksRemoveOneDrive": {
-    "Content": "Remove OneDrive",
+    "Content": "Microsoft OneDrive - Remove",
     "Description": "Denies permission to remove OneDrive user files, then uses its own uninstaller to remove it and restores the original permission afterward.",
     "category": "z__Advanced Tweaks - CAUTION",
     "panel": "1",
@@ -23,7 +23,7 @@ description: ""
       Remove-Item \"$Env:LocalAppData\\Microsoft\\OneDrive\" -Recurse -Force
       Remove-Item \"C:\\ProgramData\\Microsoft OneDrive\" -Recurse -Force
 
-      # Grant back permission to accses OneDrive folder
+      # Grant back permission to access OneDrive folder
       icacls $Env:OneDrive /grant \"Administrators:(D,DC)\"
 
       # Disable OneSyncSvc
@@ -36,7 +36,7 @@ description: ""
       winget install Microsoft.Onedrive --source winget
 
       # Enabled OneSyncSvc
-      Set-Service -Name OneSyncSvc -StartupType Enabled
+      Set-Service -Name OneSyncSvc -StartupType Automatic
       "
     ],
 ```

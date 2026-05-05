@@ -1,6 +1,8 @@
 ---
 title: Applications
 weight: 3
+prev: /userguide/getting-started/
+next: /userguide/tweaks/
 ---
 
 {{< tabs >}}
@@ -36,4 +38,4 @@ weight: 3
 {{< image src="images/Install-Tab" alt="Install Image" >}}
 
 > [!TIP]
-> If you have trouble finding an application, press `ctrl + f` and search the name of it. Applications will filter depending on your input.
+> If you have trouble finding an application, press `Ctrl + F` and search for its name. The list filters as you type.

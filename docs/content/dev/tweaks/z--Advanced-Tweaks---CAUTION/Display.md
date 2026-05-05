@@ -1,11 +1,11 @@
 ---
-title: "Set Display for Performance"
+title: "Visual Effects - Set to Best Performance"
 description: ""
 ---
 
-```json {filename="config/tweaks.json",linenos=inline,linenostart=1534}
+```json {filename="config/tweaks.json",linenos=inline,linenostart=729}
   "WPFTweaksDisplay": {
-    "Content": "Set Display for Performance",
+    "Content": "Visual Effects - Set to Best Performance",
     "Description": "Sets the system preferences to performance. You can do this manually with sysdm.cpl as well.",
     "category": "z__Advanced Tweaks - CAUTION",
     "panel": "1",
@@ -105,6 +105,6 @@ description: ""
 
 ## Registry Changes
 
-Applications and System Components store and retrieve configuration data to modify windows settings, so we can use the registry to change many settings in one place.
+Applications and System Components store and retrieve configuration data to modify Windows settings, so we can use the registry to change many settings in one place.
 
 You can find information about the registry on [Wikipedia](https://www.wikiwand.com/en/Windows_Registry) and [Microsoft's Website](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry).

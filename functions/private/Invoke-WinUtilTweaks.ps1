@@ -25,7 +25,6 @@ function Invoke-WinUtilTweaks {
     if($undo) {
         $Values = @{
             Registry = "OriginalValue"
-            ScheduledTask = "OriginalState"
             Service = "OriginalType"
             ScriptType = "UndoScript"
         }
@@ -33,16 +32,9 @@ function Invoke-WinUtilTweaks {
     } else {
         $Values = @{
             Registry = "Value"
-            ScheduledTask = "State"
             Service = "StartupType"
             OriginalService = "OriginalType"
             ScriptType = "InvokeScript"
-        }
-    }
-    if($sync.configs.tweaks.$CheckBox.ScheduledTask) {
-        $sync.configs.tweaks.$CheckBox.ScheduledTask | ForEach-Object {
-            Write-Debug "$($psitem.Name) and state is $($psitem.$($values.ScheduledTask))"
-            Set-WinUtilScheduledTask -Name $psitem.Name -State $psitem.$($values.ScheduledTask)
         }
     }
     if($sync.configs.tweaks.$CheckBox.service) {
@@ -60,7 +52,7 @@ function Invoke-WinUtilTweaks {
                         $changeservice = $false
                     }
                 } catch [System.ServiceProcess.ServiceNotFoundException] {
-                    Write-Warning "Service $($psitem.Name) was not found"
+                    Write-Warning "Service $($psitem.Name) was not found."
                 }
             }
 
@@ -76,9 +68,9 @@ function Invoke-WinUtilTweaks {
             if (($psitem.Path -imatch "hku") -and !(Get-PSDrive -Name HKU -ErrorAction SilentlyContinue)) {
                 $null = (New-PSDrive -PSProvider Registry -Name HKU -Root HKEY_USERS)
                 if (Get-PSDrive -Name HKU -ErrorAction SilentlyContinue) {
-                    Write-Debug "HKU drive created successfully"
+                    Write-Debug "HKU drive created successfully."
                 } else {
-                    Write-Debug "Failed to create HKU drive"
+                    Write-Debug "Failed to create HKU drive."
                 }
             }
             Set-WinUtilRegistry -Name $psitem.Name -Path $psitem.Path -Type $psitem.Type -Value $psitem.$($values.registry)
